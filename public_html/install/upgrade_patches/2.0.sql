@@ -43,7 +43,8 @@ INSERT IGNORE INTO `lc_countries` (`status`, `name`, `domestic_name`, `iso_code_
 (1, 'Åland Islands', '', '248', 'AX', 'ALA', '', '%company\r\n%firstname %lastname\r\n%address1\r\n%address2\r\n%postcode %city\r\n%zone_name\r\n%country_name', '', 0, 'en', 'EUR', '358', NOW(), NOW());
 -- --------------------------------------------------------
 INSERT IGNORE INTO `lc_settings` (`setting_group_key`, `type`, `title`, `description`, `key`, `value`, `function`, `priority`, `date_updated`, `date_created`)
-VALUES ('', 'global', 'Catalog Template Settings', '', 'store_template_catalog_settings', '{"product_modal_window":"1","sidebar_parallax_effect":"1","cookie_acceptance":"1"}', 'smalltext()', 0, NOW(), NOW());
+VALUES ('', 'global', 'Catalog Template Settings', '', 'store_template_catalog_settings', '{"product_modal_window":"1","sidebar_parallax_effect":"1","cookie_acceptance":"1"}', 'smalltext()', 0, NOW(), NOW()),
+('', 'global', 'Admin Template Settings', '', 'store_template_admin_settings', '{}', 'smalltext()', 0, NOW(), NOW());
 -- --------------------------------------------------------
 ALTER TABLE `lc_categories_info` ADD UNIQUE INDEX `category_info` (`category_id`, `language_code`);
 -- --------------------------------------------------------

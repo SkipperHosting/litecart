@@ -5,7 +5,9 @@
 
       $file = str_replace('\\', '/', $file);
 
-      if (preg_match('#^('. preg_quote(FS_DIR_APP . 'includes/templates/', '#') .'[^/]+)/#', $file, $matches)) {
+      //check desired location, then default locations
+      if (preg_match('#^('.preg_quote(FS_DIR_APP.'includes/templates/', '#').'[^/]+\.(admin|catalog))/#', $file, $matches)) {
+        if (!file_exists($file)) $file = preg_replace('#^('. preg_quote($matches[1], '#') .')#', FS_DIR_APP . 'includes/templates/default.'.$matches[2].'/', $file);
         if (!file_exists($file)) $file = preg_replace('#^('. preg_quote($matches[1], '#') .')#', FS_DIR_APP . 'includes/templates/default.catalog/', $file);
       }
 

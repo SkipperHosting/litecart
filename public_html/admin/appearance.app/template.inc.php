@@ -83,14 +83,19 @@
           <div class="input-group">
             <?php echo functions::form_draw_templates_list('catalog', 'template_catalog', empty($_POST['template_catalog']) ? settings::get('store_template_catalog') : true); ?>
             <span class="input-group-btn">
-              <a class="btn btn-default" href="<?php echo document::href_link(WS_DIR_ADMIN, array('doc' => 'template_settings'), array('app')); ?>" alt="<?php language::translate('title_settings', 'Settings'); ?>"><?php echo functions::draw_fonticon('fa-wrench fa-lg'); ?></a>
+              <a class="btn btn-default" href="<?php echo document::href_link(WS_DIR_ADMIN, array('doc' => 'template_catalog_settings'), array('app')); ?>" alt="<?php language::translate('title_settings', 'Settings'); ?>"><?php echo functions::draw_fonticon('fa-wrench fa-lg'); ?></a>
             </span>
           </div>
       </div>
 
       <div class="form-group">
         <label><?php echo language::translate('title_admin_template', 'Admin Template'); ?></label>
-          <?php echo functions::form_draw_templates_list('admin', 'template_admin', empty($_POST['template_admin']) ? settings::get('store_template_admin') : true); ?>
+          <div class="input-group">
+            <?php echo functions::form_draw_templates_list('admin', 'template_admin', empty($_POST['template_admin']) ? settings::get('store_template_admin') : true); ?>
+            <span class="input-group-btn">
+              <a class="btn btn-default" href="<?php echo document::href_link(WS_DIR_ADMIN, array('doc' => 'template_admin_settings'), array('app')); ?>" alt="<?php language::translate('title_settings', 'Settings'); ?>"><?php echo functions::draw_fonticon('fa-wrench fa-lg'); ?></a>
+          </span>
+        </div>
       </div>
 
       <div class="btn-group">

@@ -11,9 +11,10 @@
         if (preg_match('#^/#', $view)) {
           $file = $view;
 
-      // Relative path
+      // Relative path - check custom location, then default locations
         } else {
           $file = vmod::check(FS_DIR_APP . 'includes/templates/' . document::$template .'/'. $view .'.inc.php');
+          if (!is_file($file)) $file = vmod::check(FS_DIR_APP . 'includes/templates/'. preg_replace('#(.*)\.(admin|catalog)$#', 'default.$2', document::$template) .'/'. $view .'.inc.php');
           if (!is_file($file)) $file = vmod::check(FS_DIR_APP . 'includes/templates/default.catalog/'. $view .'.inc.php');
         }
 

@@ -23,6 +23,7 @@
     'docs' => array(
       'logotype' => 'logotype.inc.php',
       'template' => 'template.inc.php',
-      'template_settings' => 'template_settings.inc.php',
+      'template_catalog_settings' => 'template_catalog_settings.inc.php',
+      'template_admin_settings' => 'template_admin_settings.inc.php',
     ),
   );
